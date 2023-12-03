@@ -1,7 +1,8 @@
 #include "Medication.h"
 using namespace std;
 
-Medication::Medication() {
+Medication::Medication() //Deafult constructor 
+{
 	name_ = "none";
 	description_ = "none";
 	price_ = 0.0;
@@ -10,6 +11,7 @@ Medication::Medication() {
 	barcode_ = 0;
 }
 
+//Parameterized constructor
 Medication::Medication(string name_, string description_, float price_, int quantity_, string expiry_date_, int barcode_) :
 	name_(name_), description_(description_), price_(price_), quantity_(quantity_), expiry_date_(expiry_date_), barcode_(barcode_){}
 
@@ -34,10 +36,20 @@ void Medication::setDescription(string description_)
 }
 void Medication::setPrice(float price_)
 {
+	// error handling of negative values
+	while (price_ < 0) {
+		cout << "Invalid Price, Re-enter: ";
+		cin >> price_;
+	}
 	this->price_ = price_;
 }
 void Medication::setQuantity_in_Stock(int quantity_)
 {
+	// error handling of negative values
+	while (quantity_ < 0) {
+		cout << "Invalid Quantity, Re-enter: ";
+		cin >> quantity_;
+	}
 	this->quantity_ = quantity_;
 }
 void Medication::setExpiry_Date(string expiry_date_)
@@ -46,7 +58,12 @@ void Medication::setExpiry_Date(string expiry_date_)
 }
 void Medication::setbarcode(int barcode_)
 {
-	this->barcode_ = barcode_;
+	// error handling of negative values
+	while (barcode_ < 0) {
+		cout << "Invalid Quantity, Re-enter: ";
+		cin >> barcode_;
+	}
+	this->barcode_ = barcode_;	
 }
 string Medication::getName()
 {
