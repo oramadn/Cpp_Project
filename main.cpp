@@ -9,6 +9,8 @@
 #include<string>
 #include "Customer.h"
 #include "Medication.h"
+#include "Address.h"
+#include "Date.h"
 using namespace std;
 
 void addMedication(Medication& obj) {
@@ -90,6 +92,9 @@ int main() {
 
 	Medication med1;
 	//med1.display_medication_information();
+
+	Date add1;
+	add1.printDate();
 	
 	//Program starts here
 	char choice;

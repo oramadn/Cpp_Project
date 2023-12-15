@@ -5,16 +5,16 @@ using namespace std;
 class Medication
 {
 private:
-	std::string name_;
-	std::string description_;
-	std::string expiry_date_;
+	string name_;
+	string description_;
+	string expiry_date_;
 	float price_;
 	int quantity_;
 	int barcode_;
 
 public:
 	Medication();
-	Medication(std::string name_, std::string description_, float price_, int quantity_, string expiry_date_, int barcode_);
+	Medication(string name_, string description_, float price_, int quantity_, string expiry_date_, int barcode_);
 	Medication(const Medication& c);
 	void setName(std::string name_);
 	void setDescription(std::string description_);
