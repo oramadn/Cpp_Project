@@ -1,32 +1,30 @@
-#include <iostream>
+
 #include <string>
-#include <typeinfo>
-using namespace std;
+#include "Address.h"  
+using namespace std;  
 
 class Customer {
 private:
-	//Data Members
-	string Customer_Name;
-	const int Customer_ID;
-	string Phone_Number;
-	string Address;
+    static int nextId;
+    string name;
+    int customerId;
+    Address address;  
 
 public:
-	Customer();
-	//Constructor
-	Customer(string Customer_Name, int Customer_ID, string Phone_Number, string Address);
+    // Constructor
+    Customer(const string& name, const Address& address);
 
-	//Setters
-	void setCustomer_Name(string Customer_Name);
-	void setPhone_Number(string Phone_Number);
-	void setAddress(string Address);
+    // Setters
+    void setName(const string& name);
+    void setAddress(const Address& address);
 
-	//Getters
-	string getCustomer_Name();
-	int getCustomer_ID()const;
-	string getPhone_Number();
-	string getAddress();
+    // Getters
+    string getName() const;
+    int getCustomerId() const;
+    Address getAddress() const;
 
-	//Member Function to Display customer information
-	void printCustomerInfo();
+    // Method to display customer information
+    void printCustomerInfo() const;
 };
+
+
