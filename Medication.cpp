@@ -1,8 +1,11 @@
 #include "Medication.h"
+
 using namespace std;
 
+int Medication::nextId = 1;
 Medication::Medication() //Deafult constructor 
 {
+	id_ = nextId++;
 	name_ = "none";
 	description_ = "none";
 	price_ = 0.0;
@@ -12,12 +15,13 @@ Medication::Medication() //Deafult constructor
 }
 
 //Parameterized constructor
-Medication::Medication(string name_, string description_, float price_, int quantity_, string expiry_date_, int barcode_) :
-	name_(name_), description_(description_), price_(price_), quantity_(quantity_), expiry_date_(expiry_date_), barcode_(barcode_){}
+Medication::Medication(int id_,string name_, string description_, float price_, int quantity_, string expiry_date_, int barcode_) :
+	id_(id_),name_(name_), description_(description_), price_(price_), quantity_(quantity_), expiry_date_(expiry_date_), barcode_(barcode_){}
 
 Medication::Medication(const Medication& c) //Copy constructor
 {
 	cout << "Medication copy constructer used" << endl;
+	id_ = c.id_;
 	name_ = c.name_;
 	description_ = c.description_;
 	price_ = c.price_;
@@ -65,6 +69,10 @@ void Medication::setbarcode(int barcode_)
 	}
 	this->barcode_ = barcode_;	
 }
+int Medication::getId() const
+{
+	return id_;
+}
 string Medication::getName()
 {
 	return name_;
@@ -91,5 +99,11 @@ int Medication::getBarcode()
 }
 void Medication::display_medication_information()
 {
-	cout << "Name: " << getName() << endl << "ID: " << getDescription() << endl << "Number: " << getPrice() << endl << "Address: " << getQuantity() << endl << "Expiry date: "<< getExpiry_Date() << endl << "Barcode: "<< getBarcode() << endl;
+	cout << "ID: " << getId() << endl;
+	cout << "Name: " << getName() << endl;
+	cout << "Description " << getDescription() << endl;
+	cout << "Expiry date: " << getExpiry_Date() << endl;
+	cout << "Price: " << getPrice() << endl;
+	cout << "Address: " << getQuantity() << endl;
+	cout << "Barcode: " << getBarcode() << endl;
 }

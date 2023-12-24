@@ -11,10 +11,8 @@ private:
 public:
 	// Default constructor
 	Date();
-
 	// Parameterized default constructor
 	Date(int day_, int month_, int year_);
-
 	//Copy constructor
 	Date(const Date& c);
 

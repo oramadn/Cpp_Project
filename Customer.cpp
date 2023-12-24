@@ -3,11 +3,11 @@
 #include <cctype>
 #include "Customer.h"
 
+int Customer::nextId = 1;
 using namespace std;
 
 // Default Constructor
-Customer::Customer() : Customer_Name("None"), Customer_ID(0), Phone_Number("0000000000"), Address("None") {
-}
+Customer::Customer() : Customer_Name("None"), Customer_ID(nextId++), Phone_Number("0000000000"), Address("None") {}
 
 // Constructor to initialize customer attributes
 Customer::Customer(string Customer_Name, int Customer_ID, string Phone_Number, string Address) : Customer_Name(Customer_Name), Customer_ID(Customer_ID), Phone_Number(Phone_Number), Address(Address) {

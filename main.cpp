@@ -88,13 +88,15 @@ void addCustomer(Customer& obj) {
 int main() {
 	//Testing default constructors
 	Customer customer1;
-	//customer1.printCustomerInfo();
 
 	Medication med1;
 	//med1.display_medication_information();
 
-	Date add1;
-	add1.printDate();
+	//Date date1;
+	//date1.printDate();
+
+	Address add1;
+	//add1.printAddress();
 	
 	//Program starts here
 	char choice;

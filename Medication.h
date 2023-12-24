@@ -5,6 +5,8 @@ using namespace std;
 class Medication
 {
 private:
+	static int nextId; // variable to store the next available ID
+	int id_; 
 	string name_;
 	string description_;
 	string expiry_date_;
@@ -14,16 +16,17 @@ private:
 
 public:
 	Medication();
-	Medication(string name_, string description_, float price_, int quantity_, string expiry_date_, int barcode_);
+	Medication(int id_, string name_, string description_, float price_, int quantity_, string expiry_date_, int barcode_);
 	Medication(const Medication& c);
-	void setName(std::string name_);
-	void setDescription(std::string description_);
+	void setName(string name_);
+	void setDescription(string description_);
 	void setPrice(float price_);
 	void setQuantity_in_Stock(int quantity_);
 	void setExpiry_Date(string expiry_date_);
 	void setbarcode(int barcode_);
-	std::string getName();
-	std::string getDescription();
+	int getId() const;
+	string getName();
+	string getDescription();
 	double getPrice();
 	int getQuantity();
 	string getExpiry_Date();

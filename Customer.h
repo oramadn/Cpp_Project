@@ -6,8 +6,9 @@ using namespace std;
 class Customer {
 private:
 	//Data Members
+	static int nextId; // variable to store the next available ID
+	int Customer_ID;
 	string Customer_Name;
-	const int Customer_ID;
 	string Phone_Number;
 	string Address;
 
