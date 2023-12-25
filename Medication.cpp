@@ -1,5 +1,5 @@
 #include "Medication.h"
-
+#include "Date.h"
 using namespace std;
 
 int Medication::nextId = 1;
@@ -10,17 +10,18 @@ Medication::Medication() //Deafult constructor
 	description_ = "none";
 	price_ = 0.0;
 	quantity_ = 0;
-	expiry_date_ = "0";
 	barcode_ = 0;
 }
 
 //Parameterized constructor
-Medication::Medication(int id_,string name_, string description_, float price_, int quantity_, string expiry_date_, int barcode_) :
-	id_(id_),name_(name_), description_(description_), price_(price_), quantity_(quantity_), expiry_date_(expiry_date_), barcode_(barcode_){}
+Medication::Medication( string name_, string description_, float price_, int quantity_, int day, int month, int year, int barcode_) :id_(nextId++),
+	name_(name_), description_(description_), price_(price_), quantity_(quantity_),expiry_date_(day,month,year), barcode_(barcode_){
+	id_ = id_;
+}
 
 Medication::Medication(const Medication& c) //Copy constructor
 {
-	cout << "Medication copy constructer used" << endl;
+	//cout << "Medication copy constructer used" << endl;
 	id_ = c.id_;
 	name_ = c.name_;
 	description_ = c.description_;
@@ -30,9 +31,9 @@ Medication::Medication(const Medication& c) //Copy constructor
 	barcode_ = c.barcode_;
 }
 
-void Medication::setName(string name_)
+void Medication::setName(string name)
 {
-	this->name_ = name_;
+	name_ = name;
 }
 void Medication::setDescription(string description_)
 {
@@ -56,9 +57,10 @@ void Medication::setQuantity_in_Stock(int quantity_)
 	}
 	this->quantity_ = quantity_;
 }
-void Medication::setExpiry_Date(string expiry_date_)
-{
-	this->expiry_date_ = expiry_date_;
+void Medication::setDate(int day,int month, int year) {
+	expiry_date_.setDay(day);
+	expiry_date_.setMonth(month);
+	expiry_date_.setYear(year);
 }
 void Medication::setbarcode(int barcode_)
 {
@@ -69,6 +71,7 @@ void Medication::setbarcode(int barcode_)
 	}
 	this->barcode_ = barcode_;	
 }
+
 int Medication::getId() const
 {
 	return id_;
@@ -89,10 +92,6 @@ int Medication::getQuantity()
 {
 	return quantity_;
 }
-string Medication::getExpiry_Date()
-{
-	return expiry_date_;
-}
 int Medication::getBarcode()
 {
 	return barcode_;
@@ -102,7 +101,8 @@ void Medication::display_medication_information()
 	cout << "ID: " << getId() << endl;
 	cout << "Name: " << getName() << endl;
 	cout << "Description " << getDescription() << endl;
-	cout << "Expiry date: " << getExpiry_Date() << endl;
+	cout << "Expiry date:  ";
+	expiry_date_.printDate();
 	cout << "Price: " << getPrice() << endl;
 	cout << "Address: " << getQuantity() << endl;
 	cout << "Barcode: " << getBarcode() << endl;

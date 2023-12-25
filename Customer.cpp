@@ -7,13 +7,12 @@ int Customer::nextId = 1;
 using namespace std;
 
 // Default Constructor
-Customer::Customer() : Customer_Name("None"), Customer_ID(nextId++), Phone_Number("0000000000"), Address("None") {}
+Customer::Customer() : Customer_Name("None"), Customer_ID(nextId++) {}
 
 // Constructor to initialize customer attributes
-Customer::Customer(string Customer_Name, int Customer_ID, string Phone_Number, string Address) : Customer_Name(Customer_Name), Customer_ID(Customer_ID), Phone_Number(Phone_Number), Address(Address) {
+Customer::Customer(string Customer_Name, int Customer_ID, string email_, string city_, string mobile_no_, string street_name_) : Customer_Name(Customer_Name), Customer_ID(Customer_ID), Address(email_, city_, mobile_no_, street_name_) {
 
 	setCustomer_Name(Customer_Name);
-	setPhone_Number(Phone_Number);
 }
 
 // Setter for Customer_Name
@@ -34,35 +33,12 @@ void Customer::setCustomer_Name(string Customer_Name) {
 	}
 }
 
-// Setter for Phone_Number
-void Customer::setPhone_Number(string Phone_Number) {
-
-	// Handle error: the phone number is not 10 digits long
-	while (Phone_Number.length() != 10) {
-		cout << "Invalid input. Phone number must be 10 digits, Please enter a new Phone Number: \n";
-		cin >> Phone_Number;
-		this->Phone_Number = Phone_Number;
-	}
-
-	// Handle error: the phone number contains non-numeric characters
-	int flag = 0;
-	while (flag == 0) {
-		for (char ch : Phone_Number) {
-			if (!isdigit(ch)) {
-				cout << "Invalid input. Phone number must contain only digits,Please enter a new Phone Number:\n";
-				cin >> Phone_Number;
-				this->Phone_Number = Phone_Number;
-				break;
-			}
-			if (isdigit(ch) && ch == Phone_Number.back()) { flag = 1; }
-		}
-	}
-}
-
-
-// Setter for Address
-void Customer::setAddress(string Address) {
-	this->Address = Address;
+//// Setter for Address
+void Customer::setAddress(string email,string city,string mobile_no,string street_name) {
+	Address.setEmail(email);
+	Address.setCity(city);
+	Address.setMobile(mobile_no);
+	Address.setStreet(street_name);
 }
 // Getter for Customer_Name
 string Customer::getCustomer_Name() {
@@ -74,20 +50,9 @@ int Customer::getCustomer_ID() const {
 	return Customer_ID;
 }
 
-// Getter for Phone_Number
-string Customer::getPhone_Number() {
-	return Phone_Number;
-}
-
-// Getter for Address
-string Customer::getAddress() {
-	return Address;
-}
-
 // Member Function to Display customer information
 void Customer::printCustomerInfo() {
 	cout << "\nName: " << getCustomer_Name() << endl
-		<< "ID: " << getCustomer_ID() << endl
-		<< "Number: " << getPhone_Number() << endl
-		<< "Address: " << getAddress() << endl << endl;
+		<< "ID: " << getCustomer_ID() << endl;
+	Address.printAddress();
 }

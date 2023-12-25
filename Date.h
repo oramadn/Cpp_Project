@@ -1,3 +1,6 @@
+#ifndef DATE_H  // Include guard
+#define DATE_H
+
 #include <iostream>
 
 using namespace std;
@@ -29,3 +32,5 @@ public:
 	//Display of Date
 	void printDate() const;
 };
+
+#endif

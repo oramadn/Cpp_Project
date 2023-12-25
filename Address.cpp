@@ -33,8 +33,30 @@ void Address::setCity(string city) {
 	city_ = city;
 }
 
-void Address::setMobile(string mobile_no) {
-	mobile_no_ = mobile_no;
+void Address::setMobile(string mobile_no_) {
+
+	// Handle error: the phone number is not 10 digits long
+	while (mobile_no_.length() != 10) {
+		cout << "Invalid input. Phone number must be 10 digits, Please enter a new Phone Number: \n";
+		cin >> mobile_no_;
+		this->mobile_no_ = mobile_no_;
+	}
+
+	// Handle error: the phone number contains non-numeric characters
+	int flag = 0;
+	while (flag == 0) {
+		for (char ch : mobile_no_) {
+			if (!isdigit(ch)) {
+				cout << "Invalid input. Phone number must contain only digits,Please enter a new Phone Number:\n";
+				cin >> mobile_no_;
+				this->mobile_no_ = mobile_no_;
+				break;
+			}
+			if (isdigit(ch) && ch == mobile_no_.back()) { 
+				this->mobile_no_ = mobile_no_;
+				flag = 1; }
+		}
+	}
 }
 
 void Address::setStreet(string street_name) {

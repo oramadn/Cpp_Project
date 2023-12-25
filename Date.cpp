@@ -11,7 +11,7 @@ Date::Date(int day_, int month_, int year_) : day_(day_), month_(month_), year_(
 // Copy constructor
 Date::Date(const Date& c) //Copy constructor
 {
-	cout << "Date copy constructer used" << endl;
+	//cout << "Date copy constructer used" << endl;
 	day_ = c.day_;
 	month_ = c.month_;
 	year_ = c.year_;

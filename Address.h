@@ -1,3 +1,5 @@
+#ifndef ADDRESS_H
+#define ADDRESS_H
 #include <iostream>
 #include <string>
 
@@ -35,3 +37,5 @@ public:
 	//Display of Address
 	void printAddress() const;
 };
+
+#endif // ADDRESS_H
