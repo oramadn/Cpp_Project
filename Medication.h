@@ -10,7 +10,7 @@ class Pharmacy;
 
 class Medication
 {
-private:
+protected:
 	static int nextId; // variable to store the next available ID
 	int id_; 
 	string name_;

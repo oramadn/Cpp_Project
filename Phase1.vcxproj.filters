@@ -33,6 +33,12 @@
     <ClCompile Include="Pharmacy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Prescription.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OffTheShelf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Medication.h">
@@ -48,6 +54,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Pharmacy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Prescription.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OffTheShelf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

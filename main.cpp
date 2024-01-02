@@ -9,33 +9,13 @@
 #include<string>
 #include "Customer.h"
 #include "Medication.h"
+#include "Prescription.h"
+#include "OffTheShelf.h"
 #include "Address.h"
 #include "Date.h"
 #include "Pharmacy.h"
 using namespace std;
 
-//void addCustomer(Customer& obj) {
-//	string stringInput;
-//	int intInput;
-//
-//	cout << "\nPlease enter the following information:\n";
-//	cout << "Name: ";
-//	cin >> stringInput;
-//	obj.setCustomer_Name(stringInput);
-//
-//	/*cout << "ID: ";
-//	cin >> intInput;
-//	obj.set(stringInput);*/
-//
-//	/*cout << "Phone number: ";
-//	cin >> stringInput;
-//	obj.setPhone_Number(stringInput);
-//
-//	cout << "Address: ";
-//	cin >> stringInput;
-//	obj.setAddress(stringInput);*/
-//	return;
-//}
 void addPharmacy(Pharmacy& obj) {
 	string stringInput;
 
@@ -63,7 +43,13 @@ int choosePharmacy(Pharmacy pharmacies[], int pharmacyCnt) {
 }
 
 int main() {
-		
+	
+	/*Prescription pre("bob","wow",2.1,1,10,15,2001,123123,3,20,12,2013);
+	pre.printPrescription();*/
+
+	/*OffTheShelf off("bob", "wow", 2.1, 1, 10, 15, 2001, 123123, true, 20, 12, 2013);
+	off.printOffTheShelf();*/
+
 	//Program starts here
 	Pharmacy pharmacies[10];
 	int pharmacyCnt = 0, chosenPharmacy = -1;
