@@ -14,12 +14,12 @@ private:
 
 public:
 	OffTheShelf();
-	OffTheShelf(string name_, string description_, float price_, int quantity_, int Expiryday, int Expirymonth, int Expiryyear, int barcode_, bool BOGOF_, int Offerday, int Offermonth, int Offeryear);
+	OffTheShelf(string name_, string description_, float price_, int quantity_, int Expiryday, int Expirymonth, int Expiryyear, int barcode_, bool BOGOF_);
 	OffTheShelf(const OffTheShelf& c);
 
 	//Setters
 	void setBOGOF(bool BOGOF);
-	void setOfferEnds(int day, int month, int year);
+	void setOfferEnds();
 
 	//Getters
 	bool getBOGOF() const;
