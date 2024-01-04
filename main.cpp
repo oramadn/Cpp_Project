@@ -47,7 +47,7 @@ int main() {
 	/*Prescription pre("bob","wow",2.1,1,10,15,2001,123123,3,20,12,2013);
 	pre.printPrescription();*/
 
-	/*OffTheShelf off("bob", "wow", 2.1, 1, 10, 15, 2001, 123123, false);
+	/*OffTheShelf off("bob", "wow", 2.1, 1, 10, 15, 2001, 123123, true);
 	off.printOffTheShelf();*/
 
 	//Program starts here

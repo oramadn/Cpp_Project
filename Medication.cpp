@@ -76,27 +76,27 @@ int Medication::getId() const
 {
 	return id_;
 }
-string Medication::getName()
+string Medication::getName() const
 {
 	return name_;
 }
-string Medication::getDescription()
+string Medication::getDescription() const
 {
 	return description_;
 }
-double Medication::getPrice()
+double Medication::getPrice() const
 {
 	return price_;
 }
-int Medication::getQuantity()
+int Medication::getQuantity() const
 {
 	return quantity_;
 }
-int Medication::getBarcode()
+int Medication::getBarcode() const
 {
 	return barcode_;
 }
-void Medication::display_medication_information()
+void Medication::display_medication_information() const
 {
 	cout << "ID: " << getId() << endl;
 	cout << "Name: " << getName() << endl;

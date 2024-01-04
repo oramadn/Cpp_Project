@@ -54,7 +54,12 @@ Date OffTheShelf::getOfferEnds() const {
 
 //Print function
 void OffTheShelf::printOffTheShelf() const {
-	cout << "Buy 1 Get 1 Free status: " << BOGOF_ << endl;
+	display_medication_information(); //Display common base attributes
+	cout << "Buy 1 Get 1 Free?: ";
+	if (BOGOF_ == true) {
+		cout << "Yes\n";
+	}
+	else{ cout << "No\n"; }
 	cout << "Offer ends on: ";
 	OfferEnds_.printDate();
 }

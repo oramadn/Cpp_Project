@@ -1,5 +1,6 @@
 #include "Prescription.h"
 #include "Date.h"
+#include "Medication.h"
 using namespace std;
 
 Prescription::Prescription() //Default constructor
@@ -41,6 +42,7 @@ Date Prescription::getApprovalDate() const {
 }
 
 void Prescription::printPrescription() const {
+	display_medication_information(); //Display common base attributes
 	cout << "FDA number: " << FDANumber_ << endl;
 	cout << "Approval date: ";
 	ApprovalDate_.printDate();

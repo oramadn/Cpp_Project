@@ -30,13 +30,13 @@ public:
 	void setQuantity_in_Stock(int quantity_);
 	void setbarcode(int barcode_);
 	int getId() const;
-	string getName();
-	string getDescription();
-	double getPrice();
-	int getQuantity();
+	string getName() const;
+	string getDescription() const;
+	double getPrice() const;
+	int getQuantity() const;
 	void setDate(int day, int month, int year);
-	int getBarcode();
-	void display_medication_information();
+	int getBarcode() const;
+	void display_medication_information() const;
 	friend class Pharmacy;
 };
 
