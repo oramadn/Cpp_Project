@@ -3,6 +3,8 @@
 
 #include "Medication.h"
 #include "Customer.h"
+#include "Prescription.h"
+#include "OffTheShelf.h"
 #include <iostream>
 #include <string>
 
@@ -12,23 +14,30 @@ class Pharmacy {
 private:
 	static int nextId;
 	const int pharmacyId;
-	string pharmacyName;
-	Medication medications[50];
-	Customer customers[50];
-	int currentMedicationCount;
-	int currentCustomerCount;
+	string pharmacyName_;
+
+	Prescription* prescriptions_;
+	OffTheShelf* OffTheShelfs_;
+	Customer* customers_;
+	int prescriptionSize_;
+	int OffTheShelfSize_;
+	int customersSize_;
 
 public:
 	Pharmacy();
-	Pharmacy(int pharmacyId, string pharmacyName, int currentMedicationCount, int currentCustomerCount);
+	Pharmacy(int pharmacyId, string pharmacyName, int prescriptionSize, int OffTheShelfSize, int currentCustomerCount);
 	Pharmacy(const Pharmacy& c);
+	Pharmacy& operator=(const Pharmacy& other);
+	~Pharmacy();
 
 	void setName(string name);
-	void addMedication();
-	void removeMedication();
+	void addPrescription();
+	void addOfftheshelf();
+	void removePrescription();
+	void removeOfftheshelf();
 	void addCustomer();
-	string getName ();
-	void displayMedications();
+	string getName () const;
+	void displayMedications() const;
 	void displayCustomers();
 };
 

@@ -46,4 +46,5 @@ void Prescription::printPrescription() const {
 	cout << "FDA number: " << FDANumber_ << endl;
 	cout << "Approval date: ";
 	ApprovalDate_.printDate();
+	cout << endl;
 }

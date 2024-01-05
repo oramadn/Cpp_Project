@@ -14,9 +14,8 @@ Medication::Medication() //Deafult constructor
 }
 
 //Parameterized constructor
-Medication::Medication( string name_, string description_, float price_, int quantity_, int day, int month, int year, int barcode_) :id_(nextId++),
+Medication::Medication( string name_, string description_, float price_, int quantity_, int day, int month, int year, int barcode_) :id_(nextId),
 	name_(name_), description_(description_), price_(price_), quantity_(quantity_),expiry_date_(day,month,year), barcode_(barcode_){
-	id_ = id_;
 }
 
 Medication::Medication(const Medication& c) //Copy constructor
